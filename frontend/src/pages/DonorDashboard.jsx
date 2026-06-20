@@ -134,25 +134,20 @@ export default function DonorDashboard() {
     }
   };
 
-  const tabBtn = (id, label) => (
-    <button
-      onClick={() => setTab(id)}
-      style={{
-        padding: "8px 20px",
-        borderRadius: "8px",
-        border: "none",
-        fontWeight: "600",
-        fontSize: "14px",
-        cursor: "pointer",
-        fontFamily: "'Inter', sans-serif",
-        background: tab === id ? C.green : "transparent",
-        color: tab === id ? "#fff" : C.gray,
-        transition: "all .2s",
-      }}
-    >
-      {label}
-    </button>
-  );
+ const tabBtn = (id, label) => (
+  <button onClick={() => setTab(id)} style={{
+    padding: '9px 18px', borderRadius: '10px', border: 'none',
+    fontWeight: '600', fontSize: '13px', cursor: 'pointer',
+    fontFamily: "'Inter', sans-serif",
+    background: tab === id
+      ? 'linear-gradient(135deg, #4ade80, #22c55e)'
+      : 'transparent',
+    color: tab === id ? '#0f172a' : 'rgba(255,255,255,0.5)',
+    boxShadow: tab === id ? '0 4px 16px rgba(74,222,128,0.3)' : 'none',
+    transition: 'all .25s cubic-bezier(0.16, 1, 0.3, 1)',
+    transform: tab === id ? 'scale(1.02)' : 'scale(1)',
+  }}>{label}</button>
+);
 
   return (
     <div>
@@ -168,7 +163,7 @@ export default function DonorDashboard() {
       >
         {tabBtn("post", "🍱 Donate Karo")}
         {tabBtn("listings", `📋 Listings (${listings.length})`)}
-        {tabBtn("mine", `_MY Listings (${myListings.length})`)}
+        {tabBtn("mine", `MY Listings (${myListings.length})`)}
         {tabBtn("map", "🗺️ Map")}
       </div>
 

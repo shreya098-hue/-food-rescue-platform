@@ -50,16 +50,17 @@ export default function ShelterDashboard() {
   };
 
   const tabBtn = (id, label) => (
-    <button onClick={() => setTab(id)} style={{
-      padding: '8px 20px', borderRadius: '8px', border: 'none',
-      fontWeight: '600', fontSize: '14px', cursor: 'pointer',
-      fontFamily: "'Inter', sans-serif",
-      background: tab === id ? C.blue : 'transparent',
-      color: tab === id ? '#fff' : C.gray,
-      transition: 'all .2s',
-    }}>{label}</button>
-  );
-
+  <button onClick={() => setTab(id)} style={{
+    padding: '9px 18px', borderRadius: '10px', border: 'none',
+    fontWeight: '600', fontSize: '13px', cursor: 'pointer',
+    fontFamily: "'Inter', sans-serif",
+   background: tab === id ? 'linear-gradient(135deg, #60a5fa, #3b82f6)' : 'transparent',
+color: tab === id ? 'white' : 'rgba(255,255,255,0.5)',
+boxShadow: tab === id ? '0 4px 16px rgba(96,165,250,0.3)' : 'none',
+    transition: 'all .25s cubic-bezier(0.16, 1, 0.3, 1)',
+    transform: tab === id ? 'scale(1.02)' : 'scale(1)',
+  }}>{label}</button>
+);
   return (
     <div>
       <div style={{ ...s.card, borderRadius: '12px', padding: '8px', display: 'flex', gap: '4px', marginBottom: '20px' }}>

@@ -68,17 +68,18 @@ export default function VolunteerDashboard() {
       setMsg({ text: data.error, type: 'error' });
     }
   };
-
-  const tabBtn = (id, label) => (
-    <button onClick={() => setTab(id)} style={{
-      padding: '8px 20px', borderRadius: '8px', border: 'none',
-      fontWeight: '600', fontSize: '14px', cursor: 'pointer',
-      fontFamily: "'Inter', sans-serif",
-      background: tab === id ? '#f59e0b' : 'transparent',
-      color: tab === id ? '#fff' : C.gray,
-      transition: 'all .2s',
-    }}>{label}</button>
-  );
+ const tabBtn = (id, label) => (
+  <button onClick={() => setTab(id)} style={{
+    padding: '9px 18px', borderRadius: '10px', border: 'none',
+    fontWeight: '600', fontSize: '13px', cursor: 'pointer',
+    fontFamily: "'Inter', sans-serif",
+   background: tab === id ? 'linear-gradient(135deg, #fbbf24, #f59e0b)' : 'transparent',
+color: tab === id ? '#0f172a' : 'rgba(255,255,255,0.5)',
+boxShadow: tab === id ? '0 4px 16px rgba(251,191,36,0.3)' : 'none',
+    transition: 'all .25s cubic-bezier(0.16, 1, 0.3, 1)',
+    transform: tab === id ? 'scale(1.02)' : 'scale(1)',
+  }}>{label}</button>
+);
 
   const statusBadge = (status) => {
     if (status === 'claimed')

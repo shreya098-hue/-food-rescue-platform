@@ -20,13 +20,32 @@ export default function App() {
   if (!loggedIn) return <LoginPage onLogin={() => setLoggedIn(true)} />;
 
   return (
-    <div style={s.page}>
-      <style>{`
-        @keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
-        * { box-sizing: border-box; }
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-thumb { background: #86efac; border-radius: 10px; }
-      `}</style>
+   <div style={{
+  ...s.page,
+  background: 'linear-gradient(-45deg, #0f172a, #1e3a5f, #064e3b, #1a1a2e)',
+  backgroundSize: '400% 400%',
+  animation: 'bgMove 10s ease infinite',
+}}>
+<style>{`
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  @keyframes fadeIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+  @keyframes bgMove { 
+    0% { background-position: 0% 50%; } 
+    50% { background-position: 100% 50%; } 
+    100% { background-position: 0% 50%; } 
+  }
+  * { box-sizing: border-box; }
+  input::placeholder { color: rgba(255,255,255,0.4) !important; }
+  input:focus { 
+    border-color: rgba(74,222,128,0.6) !important; 
+    background: rgba(255,255,255,0.12) !important;
+    box-shadow: 0 0 0 3px rgba(74,222,128,0.1) !important;
+  }
+  select { color: white !important; }
+  select option { background: #1e293b !important; color: white !important; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-thumb { background: rgba(74,222,128,0.4); border-radius: 10px; }
+`}</style>
 
       <div style={s.nav}>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
