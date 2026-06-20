@@ -1,0 +1,141 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0fdf4;
+  color: #1a1a1a;
+}
+
+.navbar {
+  background: #16a34a;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.navbar h1 { color: white; font-size: 20px; }
+.navbar span { color: #dcfce7; font-size: 14px; }
+
+.container {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #15803d;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #d1fae5;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+  background: #f9fafb;
+}
+
+input:focus, select:focus {
+  border-color: #16a34a;
+  background: white;
+}
+
+.btn {
+  padding: 11px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.btn:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-green { background: #16a34a; color: white; }
+.btn-blue { background: #2563eb; color: white; }
+.btn-purple { background: #7c3aed; color: white; }
+.btn-red { background: #dc2626; color: white; }
+
+.badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-green { background: #dcfce7; color: #16a34a; }
+.badge-yellow { background: #fef9c3; color: #ca8a04; }
+.badge-blue { background: #dbeafe; color: #2563eb; }
+
+.listing-card {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+  transition: box-shadow 0.2s;
+}
+
+.listing-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.listing-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.listing-card p { font-size: 13px; color: #6b7280; margin-bottom: 8px; }
+
+.success { color: #16a34a; font-weight: 500; margin-top: 10px; }
+.error { color: #dc2626; font-weight: 500; margin-top: 10px; }
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+}
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.login-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 8px;
+}
+
+.login-card p {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
