@@ -20,6 +20,7 @@ app.get('/test-db', async (req, res) => {
   res.json({ connected: true, time: result.rows[0].now });
 });
 
-app.listen(3002, () => {
-  console.log('Server port 3002 pe chal raha hai');
+const PORT = process.env.PORT || 3002;
+app.listen(PORT, () => {
+  console.log(`Server port ${PORT} pe chal raha hai`);
 });

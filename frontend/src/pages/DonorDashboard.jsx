@@ -5,7 +5,7 @@ import Input from "../components/Input";
 import Toast from "../components/Toast";
 import { C, s } from "../components/styles";
 
-const API = "http://localhost:3002";
+const API = process.env.REACT_APP_API_URL || 'http://localhost:3002';
 
 export default function DonorDashboard() {
   const [tab, setTab] = useState("post");
@@ -41,23 +41,27 @@ export default function DonorDashboard() {
   setMyListings(Array.isArray(data) ? data : []);
 };
 
-  const searchAddress = async () => {
-    if (!address) return;
+const searchAddress = async () => {
+  if (!address) return;
+  setMsg({ text: 'Address dhundh raha hai...', type: 'success' });
+  try {
     const res = await fetch(
-      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=1`,
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(address)}&format=json&limit=5&countrycodes=in`,
+      { headers: { 'Accept-Language': 'en', 'User-Agent': 'FoodRescueApp/1.0' } }
     );
     const data = await res.json();
-    if (data[0]) {
+    if (data.length > 0) {
       setLatitude(data[0].lat);
       setLongitude(data[0].lon);
-      setMsg({
-        text: `📍 Mila: ${data[0].display_name.slice(0, 50)}...`,
-        type: "success",
-      });
+      setAddress(data[0].display_name.split(',').slice(0, 4).join(', '));
+      setMsg({ text: `📍 Mila: ${data[0].display_name.slice(0, 60)}...`, type: 'success' });
     } else {
-      setMsg({ text: "Address nahi mila", type: "error" });
+      setMsg({ text: 'Address nahi mila — thoda aur detail likho (e.g. Pitampura, Delhi)', type: 'error' });
     }
-  };
+  } catch (err) {
+    setMsg({ text: 'Search fail hua — GPS try karo', type: 'error' });
+  }
+};
 
   const getLocation = () => {
     setLocLoading(true);

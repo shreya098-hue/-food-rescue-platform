@@ -3,7 +3,7 @@ import Btn from '../components/Btn';
 import Toast from '../components/Toast';
 import { C, s } from '../components/styles';
 
-const API = 'http://localhost:3002';
+const API = process.env.REACT_APP_API_URL || 'http://localhost:3002';
 
 export default function ShelterDashboard() {
   const [tab, setTab] = useState('available');

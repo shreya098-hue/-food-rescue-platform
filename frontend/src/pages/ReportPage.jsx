@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { C, s } from '../components/styles';
 
-const API = 'http://localhost:3002';
+const API = process.env.REACT_APP_API_URL || 'http://localhost:3002';
 
 export default function ReportPage() {
   const [stats, setStats] = useState(null);
