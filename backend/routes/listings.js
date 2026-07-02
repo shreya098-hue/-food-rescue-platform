@@ -136,7 +136,7 @@ router.post('/:id/delivered', authMiddleware, async (req, res) => {
        SET status = 'delivered'
        WHERE id = $1 AND volunteer_id = $2 AND status = 'in_transit'
        RETURNING *`,
-      [req.user.userId, req.params.id]
+      [req.params.id, req.user.userId]
     );
     if (result.rows.length === 0)
       return res.status(400).json({ error: 'Kuch galat hua' });
