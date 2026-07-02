@@ -184,7 +184,7 @@ const searchAddress = async () => {
             🍱 Khana Donate Karo
           </h2>
           <Input
-            placeholder="Kya donate kar rahe ho? (e.g. Dal Chawal)"
+            placeholder="Kya donate kar rahe ho?"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />

@@ -49,7 +49,7 @@ function Map({ listings }) {
         <AutoCenter listings={valid} />
         {valid.map(l => (
           <Marker key={l.id} position={[parseFloat(l.latitude), parseFloat(l.longitude)]}>
-            <Popup>
+            <Popup maxWidth={220} minWidth={180} autoPanPadding={[30, 30]}>
               <strong>{l.title}</strong><br />
               📦 {l.quantity} {l.unit}<br />
               📍 {l.address || 'Address nahi'}<br />
